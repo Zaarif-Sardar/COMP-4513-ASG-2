@@ -1,0 +1,30 @@
+import { useState, useEffect } from 'react'
+import { Routes, Route} from 'react-router-dom'
+import GalleryListItem from './GalleryListItem.jsx'
+
+//import './App.css'
+
+
+
+function GalleryList(props) 
+{
+
+    return(
+        <div className='py-4 px-4'>
+            <ul className=' list-none'>
+              { 
+           
+              props.galleries.map(g => <GalleryListItem gallery={g} key={g.galleryId} name={g.galleryName} update={props.update} />)
+              
+              }
+            </ul>
+
+        </div>
+       
+            
+
+
+    )
+}
+
+export default GalleryList

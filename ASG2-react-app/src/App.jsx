@@ -13,6 +13,7 @@ function App() {
   const [genres, setGenres] = useState([])
 
   //Get Artists info
+  /*
   useEffect(() =>
     {
       console.log("USE EFFECT 1")
@@ -39,21 +40,32 @@ function App() {
           .catch(err => console.error(err))
         }
 
-    },[]);
+    },[]); */
   //Get Galleries info
   useEffect(() =>
     {
       console.log("USE EFFECT 1")
       const url = 'https://comp4513-asg1-7ly9.onrender.com/api/galleries'
-      if(galleries.length <=0)
+      const savedGalleries = localStorage.getItem('galleriesFromAPI');
+      console.log("Before")
+      console.log(JSON.parse(savedGalleries));
+      console.log(galleries)
+      if(savedGalleries)
+      {
+        setGalleries(JSON.parse(savedGalleries));
+      
+      }
+      else
         {
           fetch(url, {mode:'cors'})
           .then(resp => resp.json())
-          .then(data => setGalleries(data))
+          .then(data => {
+            setGalleries(data)
+            localStorage.setItem('galleriesFromAPI',JSON.stringify(data));})
           .catch(err => console.error(err))
-        }
-
+        } 
     },[]);
+    /*
   //Get Genres info
   useEffect(() =>
     {
@@ -68,21 +80,18 @@ function App() {
         }
 
     },[]);
-
+ */
   return (
     <>
       <main>
         <Routes>
           <Route path ='/' element={<LogIn/>}/>
-          <Route path ='/gallery' element={<Gallery/>}/>
-
-
+          <Route path ='/gallery' element={<Gallery galleries={galleries}/>}/>
+ 
+{console.log(galleries)}
         </Routes>
       </main>
-      {console.log(artists)}
-      {console.log(paintings)}
-      {console.log(galleries)}
-      {console.log(genres)}
+      
     </>
   )
 }
