@@ -8,7 +8,7 @@ import { Routes, Route} from 'react-router-dom'
 
 function GalleryListItem(props) 
 {
-    const handleClick =(e) => {
+    const handleClick = (e) => {
         props.update(props.id);
     }
 

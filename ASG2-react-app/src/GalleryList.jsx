@@ -10,11 +10,11 @@ function GalleryList(props)
 {
 
     return(
-        <div className='py-4 px-4'>
+        <div className='py-4 px-4 border-4 border-solid'>
             <ul className=' list-none'>
               { 
            
-              props.galleries.map(g => <GalleryListItem gallery={g} key={g.galleryId} name={g.galleryName} update={props.update} />)
+              props.galleries.map(g => <GalleryListItem gallery={g} key={g.galleryId} id={g.galleryId} name={g.galleryName} update={props.update} />)
               
               }
             </ul>

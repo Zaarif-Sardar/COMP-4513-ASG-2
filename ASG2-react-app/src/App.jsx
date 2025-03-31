@@ -26,30 +26,36 @@ function App() {
           .catch(err => console.error(err))
         }
 
-    },[]);
+    },[]); */
   //Get Paintings info
   useEffect(() =>
     {
       console.log("USE EFFECT 1")
       const url = 'https://comp4513-asg1-7ly9.onrender.com/api/paintings'
-      if(paintings.length <=0)
+      const savedPaintings = localStorage.getItem('paintingsFromAPI');
+      if(savedPaintings)
         {
-          fetch(url, {mode:'cors'})
-          .then(resp => resp.json())
-          .then(data => setPaintings(data))
-          .catch(err => console.error(err))
+          setPaintings(JSON.parse(savedPaintings));
+        
         }
+        else
+          {
+            fetch(url, {mode:'cors'})
+            .then(resp => resp.json())
+            .then(data => {
+              setPaintings(data)
+              localStorage.setItem('paintingsFromAPI',JSON.stringify(data));})
+            .catch(err => console.error(err))
+          } 
+      },[]);
 
-    },[]); */
+
   //Get Galleries info
   useEffect(() =>
     {
-      console.log("USE EFFECT 1")
+      console.log("USE EFFECT 2")
       const url = 'https://comp4513-asg1-7ly9.onrender.com/api/galleries'
       const savedGalleries = localStorage.getItem('galleriesFromAPI');
-      console.log("Before")
-      console.log(JSON.parse(savedGalleries));
-      console.log(galleries)
       if(savedGalleries)
       {
         setGalleries(JSON.parse(savedGalleries));
@@ -86,9 +92,8 @@ function App() {
       <main>
         <Routes>
           <Route path ='/' element={<LogIn/>}/>
-          <Route path ='/gallery' element={<Gallery galleries={galleries}/>}/>
- 
-{console.log(galleries)}
+          <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings}/>}/>
+          {console.log(paintings)}
         </Routes>
       </main>
       

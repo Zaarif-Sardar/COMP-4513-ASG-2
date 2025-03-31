@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
-import PaintingsList from './PaintingList.jsx'
+import GalleryListItem from './GalleryListItem.jsx'
 
 //import './App.css'
 
 
 
-function GalleryPaintings(props) 
+function GalleryPaintingsOptions(props) 
 {
-    console.log(props.paintings)
+
     return(
         <div className='border-4 border-solid col-span-2'>
-           <PaintingsList paintings={props.paintings}/>
+           
         </div>
        
     )
 }
 
-export default GalleryPaintings
+export default GalleryPaintingsOption
