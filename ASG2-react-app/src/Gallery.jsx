@@ -16,19 +16,19 @@ function Gallery(props)
         {
             const chosenGallery = props.galleries.find(g => g.galleryId == id);
             setGallery(chosenGallery);
-            console.log(props.paintings);
             
             const pFromGByT = props.paintings.filter(p => p.galleryId == id);
-            console.log(pFromGByT);
             setPaintingsForGallery(pFromGByT);
+
+
         }
-      
+   
         
     return(
         <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
             <GalleryList  galleries={props.galleries} update={clickedGallery}/>
             <GalleryInfo gallery={gallery}/>
-            <GalleryPaintings paintings={paintingsForGallery} gallery={gallery}/>
+            <GalleryPaintings paintings={paintingsForGallery} gallery={gallery} />
         </div>
     )
 }

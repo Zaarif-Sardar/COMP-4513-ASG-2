@@ -13,20 +13,27 @@ function App() {
   const [genres, setGenres] = useState([])
 
   //Get Artists info
-  /*
+  
   useEffect(() =>
     {
-      console.log("USE EFFECT 1")
+      console.log("USE EFFECT 3")
       const url = 'https://comp4513-asg1-7ly9.onrender.com/api/artists'
-      if(artists.length <=0)
+      const savedArtists = localStorage.getItem('artistsFromAPI');
+      if(savedArtists)
         {
-          fetch(url, {mode:'cors'})
-          .then(resp => resp.json())
-          .then(data => setArtists(data))
-          .catch(err => console.error(err))
+          setArtists(JSON.parse(savedArtists));
         }
+        else
+          {
+            fetch(url, {mode:'cors'})
+            .then(resp => resp.json())
+            .then(data => {
+              setArtists(data)
+              localStorage.setItem('artistsFromAPI',JSON.stringify(data));})
+            .catch(err => console.error(err))
+          } 
 
-    },[]); */
+    },[]);
   //Get Paintings info
   useEffect(() =>
     {
@@ -92,8 +99,8 @@ function App() {
       <main>
         <Routes>
           <Route path ='/' element={<LogIn/>}/>
-          <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings}/>}/>
-          {console.log(paintings)}
+          <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
+         
         </Routes>
       </main>
       

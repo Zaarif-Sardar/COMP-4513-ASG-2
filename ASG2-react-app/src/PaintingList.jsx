@@ -8,14 +8,22 @@ import PLI from './PLI.jsx'
 
 function PaintingList(props) 
 {
-    const handleClick = (e) => {
-       // props.update(props.id);
-    }
-
+  
     return(
         <ul className='py-4 px-4 '>
-             {props.paintings?.map(p => <PLI painting={p} key={p.paintingId} id={p.paintingId} name={p.title} update={props.update} gID={props.galleryId}/>)}
-        </ul>
+             {props.paintings?.map(p => <PLI 
+             painting={p} 
+             key={p.paintingId}
+            id={p.paintingId} 
+            name={p.title} 
+            update={props.update} 
+            gID={props.galleryId}
+            aName={p.artists.firstName + ' ' + p.artists.lastName} 
+            year={p.yearOfWork}
+            imgFile={`https://res.cloudinary.com/funwebdev/image/upload/w_100/art/paintings/square/${p.imageFileName}.jpg`} />)}
+        
+        </ul> 
+
             
 
     )
