@@ -1,0 +1,34 @@
+import { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
+
+//import './App.css'
+
+
+
+function Header(props) 
+{
+    console.log(props.artists);
+    return(
+        <div className=' grid grid-cols-5 w-lg gap-4  py-2 px-2 my-4 mx-4 border-solid border-2 border-indigo-600'>
+            <div>
+                <img src='' alt='LOGO'/>
+            </div>
+            <div>
+                <p>Title</p>
+            </div>
+            <div className='col-start-4 col-end-6'>
+                <div className='flex justify-around'>
+                <Link artists={props.artists} to='/Artists'><button className='bg-violet-500  py-2 px-4 rounded-md  hover:bg-gray-100 hover:text-stone-900 hover:outline-2 hover:outline-offset-2 text-white font-bold border-1 border-solid'>Artists</button></Link>
+                <button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Paintings</button>
+                <Link to='/Gallery'><button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Galleries</button></Link>
+                <button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Genres</button>
+                <button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Favourites</button>
+                <button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>About</button>
+                </div>
+            </div>
+        </div>
+    )
+    
+}
+
+export default Header

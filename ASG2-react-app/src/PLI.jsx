@@ -11,11 +11,11 @@ function PLI(props)
     
     return(
         <li className='py-4 px-4 border-2 border-solid hover:bg-stone-500' >
-            <div className='flex  justify-around  content-center border-1 border-solid hover:bg-grey-500'> 
-                <div>
+            <div className='flex  content-center border-1 border-solid hover:bg-grey-500'> 
+                <div className='my-5 mr-5'>
                     <img src={props.imgFile}/>
                 </div>
-                <div>
+                <div className=' content-center my-5 mx-5'>
                     <p>{props.name}</p>
                     <p>By: {props.aName}</p>
                     <p>Made in: {props.year}</p>

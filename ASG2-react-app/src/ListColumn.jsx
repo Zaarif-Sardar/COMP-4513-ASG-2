@@ -6,7 +6,7 @@ import GalleryListItem from './GalleryListItem.jsx'
 
 
 
-function GalleryList(props) 
+function ListColumn(props) 
 {
 
     return(
@@ -14,12 +14,8 @@ function GalleryList(props)
             <ul className=' list-none'>
               { 
            
-              props.galleries.map(g => <GalleryListItem 
-                gallery={g} 
-                key={g.galleryId} 
-                id={g.galleryId} 
-                name={g.galleryName} 
-                update={props.update} />)
+              props.galleries.map(g => <GalleryListItem gallery={g} key={g.galleryId} id={g.galleryId} name={g.galleryName} update={props.update} />)
+              
               }
             </ul>
 
@@ -31,4 +27,4 @@ function GalleryList(props)
     )
 }
 
-export default GalleryList
+export default ListColumn

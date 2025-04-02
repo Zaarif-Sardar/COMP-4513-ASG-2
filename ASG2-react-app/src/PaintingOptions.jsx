@@ -12,7 +12,6 @@ function PaintingsOptions(props)
     const handleClick = (e) => 
         {
             props.update(e.target.value);
-            console.log(e.target.value);
 
         }
 

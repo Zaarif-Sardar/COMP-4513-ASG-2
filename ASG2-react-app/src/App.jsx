@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import  LogIn from './LogIn.jsx'
 import Gallery from './Gallery.jsx'
+import Artists from './Artists.jsx'
 import './App.css'
 
 
@@ -100,7 +101,7 @@ function App() {
         <Routes>
           <Route path ='/' element={<LogIn/>}/>
           <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
-         
+          <Route path ='/artists' element={<Artists paintings={paintings} artists={artists} galleries={galleries}/>}/>
         </Routes>
       </main>
       

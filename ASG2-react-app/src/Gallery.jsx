@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route} from 'react-router-dom'
+import Header from './Header.jsx'
 import GalleryList from './GalleryList.jsx'
 import GalleryInfo from './GalleryInfo.jsx'
 import GalleryPaintings from './GalleryPaintings.jsx'
@@ -25,11 +25,15 @@ function Gallery(props)
    
         
     return(
-        <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
+        <article>
+            <Header artists={props.artists} painting={props.paintings} />
+            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
             <GalleryList  galleries={props.galleries} update={clickedGallery}/>
             <GalleryInfo gallery={gallery}/>
             <GalleryPaintings paintings={paintingsForGallery} gallery={gallery} />
-        </div>
+            </div>
+        </article>
+        
     )
 }
 
