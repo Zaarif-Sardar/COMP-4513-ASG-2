@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import  LogIn from './LogIn.jsx'
 import Gallery from './Gallery.jsx'
 import Artists from './Artists.jsx'
 import './App.css'
 
+export const FavouriteAContext = createContext();
 
 function App() {
+  const [favouritesA,setFavouritesA] = useState([])
   const [count, setCount] = useState(0)
   const [artists, setArtists] = useState([])
   const [paintings, setPaintings] = useState([])
@@ -98,11 +100,13 @@ function App() {
   return (
     <>
       <main>
-        <Routes>
-          <Route path ='/' element={<LogIn/>}/>
-          <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
-          <Route path ='/artists' element={<Artists paintings={paintings} artists={artists} galleries={galleries}/>}/>
-        </Routes>
+        <FavouriteAContext.Provider value={{favouritesA,setFavouritesA}}>
+          <Routes>
+            <Route path ='/' element={<LogIn/>}/>
+            <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
+            <Route path ='/artists' element={<Artists paintings={paintings} artists={artists} galleries={galleries}/>}/>
+          </Routes>
+        </FavouriteAContext.Provider>
       </main>
       
     </>

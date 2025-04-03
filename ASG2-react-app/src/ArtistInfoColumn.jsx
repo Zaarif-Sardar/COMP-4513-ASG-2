@@ -7,6 +7,8 @@ import ArtistCard from './ArtistCard.jsx'
 
 function ArtistsInfoColumn(props) 
 {
+
+    
     return(
         <div className='border-4 border-solid col-span-2'>
            <ArtistCard 
@@ -17,6 +19,7 @@ function ArtistsInfoColumn(props)
            deathDate={props.artist.yearOfDeath}
            birthDate={props.artist.yearOfBirth}
            artistLink={props.artist.artistLink}
+           artist={props.artist}
            />
         </div>
        

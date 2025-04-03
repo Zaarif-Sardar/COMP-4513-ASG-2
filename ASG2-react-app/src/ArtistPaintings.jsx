@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import PaintingsList from './PaintingList.jsx'
 import PaintingOptions from './PaintingOptions.jsx'
+import ModalInfo from './ModalInfo.jsx'
+import {Button, Modal} from 'antd'
 //import './App.css'
 
 
@@ -9,7 +11,19 @@ import PaintingOptions from './PaintingOptions.jsx'
 function ArtistPaintings(props) 
 {
     const [sortedPaintings,setSortedPaintings] = useState([props.aPaintings]);
+    const [clickedPainting,setChosenPainting] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const showModal = () => {
+        setIsModalOpen(true);
+
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);  
+    };
 
     const sortBy = (value) =>
         {
@@ -38,11 +52,23 @@ function ArtistPaintings(props)
             }
     
         }
+        
+
+            const ClickedPainting = (id) =>
+                {
+                    const chosenPainting = props.aPaintings.find(aP => aP.paintingId == id);
+                    setChosenPainting(chosenPainting)
+                    console.log(chosenPainting);
+                    
+                }
     return(
 
         <div className='border-4 border-solid col-span-2'>
             <PaintingOptions update={sortBy}/>
-           <PaintingsList paintings={props.aPaintings}/>
+           <PaintingsList paintings={props.aPaintings} sM={showModal} update1={ClickedPainting}/>
+           <Modal title={clickedPainting.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+                <ModalInfo clickedPainting={clickedPainting}/>
+           </Modal>
         </div>
        
     )
