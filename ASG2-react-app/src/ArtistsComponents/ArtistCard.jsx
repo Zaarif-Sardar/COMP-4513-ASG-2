@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Routes, Route} from 'react-router-dom'
-import { FavouriteAContext } from './App.jsx'
+import { FavouriteContext } from '../App.jsx'
 
 
 //import './App.css'
@@ -9,16 +9,16 @@ import { FavouriteAContext } from './App.jsx'
 
 function ArtistCard(props) 
 {
-    const {favouritesA,setFavouritesA} = useContext(FavouriteAContext);
+    const {favourites,setFavourites} = useContext(FavouriteContext);
 
     const addToFave = () => 
         {
-            let f = favouritesA.find(f => f.artistId === props.artist.artistId);
+            let f = favourites.find(f => f.id === props.artist.artistId);
             if(!f)
             {
-                const newFav = [...favouritesA]
-                newFav.push({id:props.artist.artistId, fName:props.fName, lName:props.lName, artistObject:props.artist});
-                setFavouritesA(newFav);
+                const newFav = [...favourites]
+                newFav.push({id:props.artist.artistId, name:(props.fName + ' ' + props.lName), Object:props.artist, favType:"A"});
+                setFavourites(newFav);
                 console.log(newFav);
                 alert('Added to favorites!');
             }

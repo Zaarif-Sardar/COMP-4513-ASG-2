@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
-import PaintingsList from './PaintingList.jsx'
-import PaintingOptions from './PaintingOptions.jsx'
-import ModalInfo from './ModalInfo.jsx'
-import {Button, Modal} from 'antd'
+import PaintingsList from '../PaintingList.jsx'
+import PaintingOptions from '../PaintingOptions.jsx'
+import ModalInfo from '../ModalInfo.jsx'
+import {Modal} from 'antd'
 //import './App.css'
 
 
@@ -34,9 +34,6 @@ function ArtistPaintings(props)
                     setSortedPaintings([...sortedByArtistsName]);
                     console.log(sortedByArtistsName);
                     break;
-                case 'thumbnail':
-                    console.log('idk');
-                    break;
                 case 'year':
                     const sortedByYear = props.aPaintings.sort((a,b) => a.yearOfWork - b.yearOfWork);
                     setSortedPaintings([...sortedByYear]);
@@ -53,7 +50,6 @@ function ArtistPaintings(props)
     
         }
         
-
             const ClickedPainting = (id) =>
                 {
                     const chosenPainting = props.aPaintings.find(aP => aP.paintingId == id);

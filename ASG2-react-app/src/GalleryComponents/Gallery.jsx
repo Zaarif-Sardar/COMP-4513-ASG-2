@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Header from './Header.jsx'
+import Header from '../Header.jsx'
 import GalleryList from './GalleryList.jsx'
 import GalleryInfo from './GalleryInfo.jsx'
 import GalleryPaintings from './GalleryPaintings.jsx'

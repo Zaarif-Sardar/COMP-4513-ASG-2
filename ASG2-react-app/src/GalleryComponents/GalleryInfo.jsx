@@ -16,6 +16,8 @@ function GalleryInfo(props)
            galleryWebSite={props.gallery.galleryWebSite}
            galleryCity={props.gallery.galleryCity}
            galleryCountry={props.gallery.galleryCountry}
+           gallery={props.gallery}
+           galleryId={props.galleryId}
            />
         </div>
        

@@ -1,10 +1,9 @@
 import { useState, useEffect, useContext} from 'react'
 import { Routes, Route} from 'react-router-dom'
-import Header from './Header.jsx'
+import Header from '../Header.jsx'
 import ArtistsList from './ArtistsList.jsx'
 import ArtistsInfoColumn from './ArtistInfoColumn.jsx'
 import ArtistPaintings from './ArtistPaintings.jsx'
-import Favourites from './Favourite.jsx'
 //import './App.css'
 
 
@@ -31,7 +30,7 @@ function Artists(props)
             <ArtistsList artists={props.artists} update={clickedArtist}/>
             <ArtistsInfoColumn artist={artist}/>
             <ArtistPaintings aPaintings={paintingsForArtist}/>
-            <Favourites/>
+            
             </div>
         </article>
         

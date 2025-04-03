@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
-import PaintingsList from './PaintingList.jsx'
-import PaintingOptions from './PaintingOptions.jsx'
+import PaintingsList from '../PaintingList.jsx'
+import PaintingOptions from '../PaintingOptions.jsx'
+import ModalInfo from '../ModalInfo.jsx'
+import { Modal} from 'antd'
+
+
 //import './App.css'
 
 
@@ -9,6 +13,20 @@ import PaintingOptions from './PaintingOptions.jsx'
 function GalleryPaintings(props) 
 {
     const [sortedPaintings,setSortedPaintings] = useState([props.paintings]);
+    const [clickedPainting,setChosenPainting] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    const showModal = () => {
+        setIsModalOpen(true);
+
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);  
+    };
 
 
     const sortBy = (value) =>
@@ -18,16 +36,10 @@ function GalleryPaintings(props)
                 case 'artist':
                     const  sortedByArtistsName = props.paintings.sort((a,b) => a.artists.firstName.localeCompare(b.artists.firstName));
                     setSortedPaintings([...sortedByArtistsName]);
-                    console.log(sortedByArtistsName);
-
-                    break;
-                case 'thumbnail':
-                    console.log('idk');
                     break;
                 case 'year':
                     const sortedByYear = props.paintings.sort((a,b) => a.yearOfWork - b.yearOfWork);
                     setSortedPaintings([...sortedByYear]);
-                    console.log(sortedByYear);
                     break;
                 case 'title':
                     const sortedByTitle = props.paintings.sort((a,b) => a.title.localeCompare(b.title));
@@ -39,11 +51,22 @@ function GalleryPaintings(props)
             }
     
         }
+
+        const ClickedPainting = (id) =>
+            {
+                const chosenPainting = props.paintings.find(gP => gP.paintingId == id);
+                setChosenPainting(chosenPainting)
+                console.log(chosenPainting);
+                
+            }
     return(
 
         <div className='border-4 border-solid col-span-2'>
             <PaintingOptions update={sortBy}/>
-           <PaintingsList paintings={props.paintings}/>
+           <PaintingsList paintings={props.paintings} sM={showModal} update1={ClickedPainting}/>
+           <Modal title={clickedPainting.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+                <ModalInfo clickedPainting={clickedPainting}/>
+           </Modal>
         </div>
        
     )
