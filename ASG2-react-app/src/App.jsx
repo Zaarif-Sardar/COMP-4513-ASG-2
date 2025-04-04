@@ -3,6 +3,8 @@ import { Routes, Route} from 'react-router-dom'
 import  LogIn from './LogIn.jsx'
 import Gallery from './GalleryComponents/Gallery.jsx'
 import Artists from './ArtistsComponents/Artists.jsx'
+import Genres from './GenreComponents/Genres.jsx'
+
 import './App.css'
 
 export const FavouriteContext = createContext();
@@ -14,6 +16,7 @@ function App() {
   const [paintings, setPaintings] = useState([])
   const [galleries, setGalleries] = useState([])
   const [genres, setGenres] = useState([])
+  const [gp, setGP] = useState([])
 
   //Get Artists info
   
@@ -81,22 +84,53 @@ function App() {
           .catch(err => console.error(err))
         } 
     },[]);
-    /*
+    
   //Get Genres info
   useEffect(() =>
     {
       console.log("USE EFFECT 1")
       const url = 'https://comp4513-asg1-7ly9.onrender.com/api/genres'
-      if(genres.length <=0)
+      const savedGenres = localStorage.getItem('genresFromAPI');
+      if(savedGenres)
         {
-          fetch(url, {mode:'cors'})
-          .then(resp => resp.json())
-          .then(data => setGenres(data))
-          .catch(err => console.error(err))
+          setGenres(JSON.parse(savedGenres));
+        
         }
-
+        else
+          {
+            fetch(url, {mode:'cors'})
+            .then(resp => resp.json())
+            .then(data => {
+              setGenres(data)
+              localStorage.setItem('genresFromAPI',JSON.stringify(data));})
+            .catch(err => console.error(err))
+          } 
     },[]);
- */
+
+    //Get Genres/painting info
+  useEffect(() =>
+    {
+      console.log("USE EFFECT 5")
+      const url = 'https://comp4513-asg1-7ly9.onrender.com/api/paintings/paintings/genres'
+      const savedGP = localStorage.getItem('gpFromAPI');
+      if(savedGP)
+        {
+          setGP(JSON.parse(savedGP));
+        
+        }
+        else
+          {
+            fetch(url, {mode:'cors'})
+            .then(resp => resp.json())
+            .then(data => {
+              setGP(data)
+              localStorage.setItem('gpFromAPI',JSON.stringify(data));})
+            .catch(err => console.error(err))
+          } 
+    },[]);
+
+  
+ 
   return (
     <>
       <main>
@@ -105,6 +139,8 @@ function App() {
             <Route path ='/' element={<LogIn/>}/>
             <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
             <Route path ='/artists' element={<Artists paintings={paintings} artists={artists} galleries={galleries}/>}/>
+            <Route path ='/genres' element={<Genres paintings={paintings} genres={genres} gp={gp}/>}/>
+
           </Routes>
         </FavouriteContext.Provider>
       </main>

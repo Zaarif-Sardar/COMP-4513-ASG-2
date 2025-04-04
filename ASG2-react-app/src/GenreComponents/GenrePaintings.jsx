@@ -1,0 +1,72 @@
+import { useState, useEffect } from 'react'
+import { Routes, Route} from 'react-router-dom'
+import PaintingsList from '../PaintingList.jsx'
+import PaintingOptions from '../PaintingOptions.jsx'
+import ModalInfo from '../ModalInfo.jsx'
+import {Modal} from 'antd'
+//import './App.css'
+
+
+
+function GenrePaintings(props) 
+{
+    const [sortedPaintings,setSortedPaintings] = useState([props.gpPaintings]);
+    const [clickedPainting,setChosenPainting] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+        setIsModalOpen(true);
+
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);  
+    };
+
+    const sortBy = (value) =>
+        {
+            switch(value)
+            {
+                case 'artist':
+                    const  sortedByArtistsName = props.gpPaintings.sort((a,b) => a.artists.firstName.localeCompare(b.artists.firstName));
+                    setSortedPaintings([...sortedByArtistsName]);
+                    console.log(sortedByArtistsName);
+                    break;
+                case 'year':
+                    const sortedByYear = props.gpPaintings.sort((a,b) => a.yearOfWork - b.yearOfWork);
+                    setSortedPaintings([...sortedByYear]);
+                    console.log(sortedByYear);
+                    break;
+                case 'title':
+                    const sortedByTitle = props.gpPaintings.sort((a,b) => a.title.localeCompare(b.title));
+                    setSortedPaintings([...sortedByTitle]);
+                    break;
+                default:
+                    console.log("Default hit");
+                    setSortedPaintings([...props.gpPaintings]);
+            }
+    
+        }
+        
+            const ClickedPainting = (id) =>
+                {
+                    const chosenPainting = props.gpPaintings.find(gp => gp.paintingId == id);
+                    setChosenPainting(chosenPainting)
+                    console.log(chosenPainting);
+                    
+                }
+    return(
+
+        <div className='border-4 border-solid col-span-2'>
+            <PaintingOptions update={sortBy}/>
+           <PaintingsList paintings={props.gpPaintings} sM={showModal} update1={ClickedPainting}/>
+           <Modal title={clickedPainting.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+                <ModalInfo clickedPainting={clickedPainting}/>
+           </Modal>
+        </div>
+       
+    )
+}
+export default GenrePaintings

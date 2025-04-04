@@ -20,6 +20,8 @@ function Artists(props)
             
             const psFromA = props.paintings.filter(p => p.artists.artistId == id);
             setPaintingsForArtist(psFromA);
+
+            
         }
    
         
