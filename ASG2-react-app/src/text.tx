@@ -1,0 +1,20 @@
+<div className=' border-2 border-solid '>
+                        <input type='radio' name='options' value='title'  onChange={handleRadio}></input>
+                        <label>Title</label>
+                        
+                    </div>
+
+<div className=' border-2 border-solid' >
+                        <input id='gallery' type='radio' name='options' onChange={handleRadio} value='gallery'></input>
+                        <label htmlFor='gallery' >Gallery</label>
+                        <SelectGalleriesInput galleries={props.galleries}/>
+
+                        
+                    </div>
+                    <div className=' border-2 border-solid' >
+                        <input id='year' type='radio' name='options' value='year' onChange={handleRadio}></input>
+                        <label htmlFor='year'>Year</label>
+                        
+
+                        
+                    </div>

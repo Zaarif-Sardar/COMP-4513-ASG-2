@@ -29,7 +29,7 @@ function Header(props)
             <div className='col-start-4 col-end-6'>
                 <div className='flex justify-around'>
                 <Link artists={props.artists} to='/Artists'><button className='bg-violet-500  py-2 px-4 rounded-md  hover:bg-gray-100 hover:text-stone-900 hover:outline-2 hover:outline-offset-2 text-white font-bold border-1 border-solid'>Artists</button></Link>
-                <button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Paintings</button>
+                <Link to='/Paintings'><button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Paintings</button></Link>
                 <Link to='/Gallery'><button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Galleries</button></Link>
                 <Link to='/Genres'><button className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Genres</button></Link>
                 <button onClick={showModal} className='bg-violet-500  py-2 px-4 rounded-md focus:shadow-outline hover:bg-gray-100 hover:text-stone-900 text-white font-bold border-1 border-solid'>Favourites</button>

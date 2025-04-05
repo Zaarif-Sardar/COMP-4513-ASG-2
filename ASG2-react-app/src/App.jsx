@@ -4,6 +4,7 @@ import  LogIn from './LogIn.jsx'
 import Gallery from './GalleryComponents/Gallery.jsx'
 import Artists from './ArtistsComponents/Artists.jsx'
 import Genres from './GenreComponents/Genres.jsx'
+import Paintings from './PaintingComponents/Paintings.jsx'
 
 import './App.css'
 
@@ -140,6 +141,7 @@ function App() {
             <Route path ='/gallery' element={<Gallery galleries={galleries} paintings={paintings} artists={artists}/>}/>
             <Route path ='/artists' element={<Artists paintings={paintings} artists={artists} galleries={galleries}/>}/>
             <Route path ='/genres' element={<Genres paintings={paintings} genres={genres} gp={gp}/>}/>
+            <Route path ='/paintings' element={<Paintings paintings={paintings} genres={genres} artists={artists} galleries={galleries}/>}/>
 
           </Routes>
         </FavouriteContext.Provider>
