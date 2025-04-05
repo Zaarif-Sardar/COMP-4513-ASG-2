@@ -11,7 +11,7 @@ function GalleryItemOption(props)
 {
    
     return(
-        <option>{props.name}</option>
+        <option value={props.id}>{props.name}</option>
         
     )
 }

@@ -8,10 +8,13 @@ import Header from '../Header.jsx'
 
 function PDI(props) 
 {
-    
+    const handleClick = (e) => {
+        props.update1(props.id);
+        props.sModal();
+    }
    
     return(
-            <div className='flex content-center justify-around border-2 border-solid hover:bg-grey-500'> 
+            <div className='flex content-center justify-around border-2 border-solid hover:bg-gray-500' onClick={handleClick}> 
                 <div className='my-5 mr-5'>
                     <img src={props.imgFile}/>
                 </div>

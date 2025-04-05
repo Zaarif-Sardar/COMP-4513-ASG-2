@@ -12,12 +12,13 @@ function SelectGalleriesInput(props)
 
 
     return(
-        <select id='galleries' className='border-solid border-2 '>
+        <select id='galleries' className='border-solid border-2 ' onChange={props.onChange}>
             {props.galleries?.map(g => <GalleryItemOption
             gallery={g}
             key={g.galleryId} 
             id={g.galleryId} 
             name={g.galleryName} 
+            onChange={props.onChange}
          />)}
         </select>
         

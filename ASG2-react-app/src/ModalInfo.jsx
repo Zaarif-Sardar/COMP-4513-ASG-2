@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Routes, Route} from 'react-router-dom'
+import { FavouriteContext } from './App.jsx'
+
 
 //import './App.css'
 
@@ -7,7 +9,22 @@ import { Routes, Route} from 'react-router-dom'
 
 function ModalInfo(props) 
 {
-    console
+    const {favourites,setFavourites} = useContext(FavouriteContext);
+
+    const addToFave = () => 
+        {
+            let f = favourites.find(f => f.id === props.clickedPainting.id);
+            if(!f)
+            {
+                const newFav = [...favourites]
+                newFav.push({id:props.clickedPainting.id, name:props.clickedPainting.title, Object:props.clickedPainting.painting, favType:"P"});
+                console.log(props.clickedPainting.title)
+                setFavourites(newFav);
+                console.log(newFav);
+                alert('Added to favorites!');
+            }
+        }
+    
     return(
         <div>
             <div className=''>
@@ -22,6 +39,7 @@ function ModalInfo(props)
                 <a href={props.clickedPainting.galleries.galleryWebsite}></a>
                 <p>{props.clickedPainting.description}</p>
                 <p>{props.clickedPainting.copyrightText}</p>
+                <button onClick={addToFave}>Add to favourites</button>
             </div>
         </div> 
    
