@@ -25,9 +25,9 @@ function GalleryCard(props)
         }
     return(
         
-            <div className=''>
-                <p className='text-7xl border-solid py-2 px-2'>{props.galleryName}</p>
-                <p className='text-3xl py-1 px-2'>{props.galleryNativeName}</p>
+            <div className='border-solid border-4 my-5 mx-2'>
+                <p className='text-7xl border-solid py-2 px-2 '>{props.galleryName}</p>
+                <p className='text-3xl py-1 px-2'>Native Name: {props.galleryNativeName}</p>
                 <p className='text-2xl py-1 px-2'>{props.galleryCity},{props.galleryCountry}</p>
                 <a className='text-2xl py-1 px-2' href={props.galleryWebSite} >Visit their Site </a>
                 <button onClick={addToFave}>Add to Favourites</button>

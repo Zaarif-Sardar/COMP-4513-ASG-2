@@ -27,8 +27,8 @@ function Gallery(props)
     return(
         <article>
             <Header artists={props.artists} painting={props.paintings} />
-            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
-            <GalleryList  galleries={props.galleries} update={clickedGallery}/>
+            <div className='grid grid-cols-5 w-lg gap-4 my-10 mx-10'>
+            <GalleryList  galleries={props.galleries} update={clickedGallery} className='rounded-md'/>
             <GalleryInfo gallery={gallery}/>
             <GalleryPaintings paintings={paintingsForGallery} gallery={gallery} />
             </div>
