@@ -1,0 +1,34 @@
+body
+{
+   
+}
+button
+{
+    background-color: #067BC2 ;
+}
+.leftPart
+{
+    background-color:#84BCDA ;
+    border: 4px solid #067BC2;
+    border-radius: 6px;
+
+}
+
+.leftLI
+{
+    padding:10px;
+    margin-right:10px;
+    margin-left:10px;
+    color:white;
+    background-color:#F37748;
+    border: 3px solid #067BC2;
+    
+}
+.middlePart
+{
+
+}
+.rightPart
+{
+
+}

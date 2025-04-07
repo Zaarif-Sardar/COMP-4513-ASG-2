@@ -10,8 +10,8 @@ function GalleryList(props)
 {
 
     return(
-        <div className='py-4 px-4 border-4 border-solid rounded-md'>
-            <ul className=' list-none rounded-md'>
+        <div className='  leftPart border-4 border-solid border-hBlue bg-cBlue rounded-md h-2/5 overflow-scroll '>
+            <ul className=' list-none rounded-md '>
               { 
            
               props.galleries.map(g => <GalleryListItem 

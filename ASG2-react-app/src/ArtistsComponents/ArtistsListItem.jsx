@@ -13,7 +13,7 @@ function ArtistsListItem(props)
     }
 
     return(
-        <li className='py-4 px-4 border-2 border-solid hover:bg-stone-500' onClick={handleClick}>{props.fName} {props.lName}</li>
+        <li className=' leftLI py-4 px-4 border-2 border-solid hover:bg-stone-500 font-sans text-lg text-white' onClick={handleClick}>{props.fName} {props.lName}</li>
         
     )
 }

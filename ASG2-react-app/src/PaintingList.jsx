@@ -10,7 +10,7 @@ function PaintingList(props)
 {
   
     return(
-        <ul className='py-4 px-4 '>
+        <ul className='my-4 mx-4 rounded-md'>
              {props.paintings?.map(p => <PLI 
              painting={p} 
              key={p.paintingId}

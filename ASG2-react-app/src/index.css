@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind css;
+
+
+button
+{
+    color: #067BC2;
+}

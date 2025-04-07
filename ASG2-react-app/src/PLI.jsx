@@ -14,12 +14,12 @@ function PLI(props)
         props.sModal();
     }
     return(
-        <li onClick={handleClick}  className='py-4 px-4 border-2 border-solid hover:bg-stone-500' >
-            <div className='flex  content-center border-1 border-solid hover:bg-grey-500'> 
+        <li onClick={handleClick}  className='py-4 px-4  bg-cOrange hover:bg-jYellow rounded-md my-2 mx-2 border-2 border-hBlue' >
+            <div className='flex  content-center   hover:bg-grey-500'> 
                 <div className='my-5 mr-5'>
                     <img src={props.imgFile}/>
                 </div>
-                <div className=' content-center my-5 mx-5'>
+                <div className=' content-center my-5 mx-5 '>
                     <p>{props.name}</p>
                     <p>By: {props.aName}</p>
                     <p>Made in: {props.year}</p>
