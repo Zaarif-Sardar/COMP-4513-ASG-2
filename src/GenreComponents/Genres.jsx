@@ -5,7 +5,6 @@ import GenresList from './GenresList.jsx';
 import GenreInfoColumn from './GenreInfoColumn.jsx';
 import GenrePaintings from './GenrePaintings.jsx';
 
-//import './App.css'
 
 
 
@@ -45,7 +44,7 @@ function Genres(props)
     return(
         <article className='h-dvh'>
             <Header artists={props.artists}/>
-            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
+            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-1 h-dvh'>
             <GenresList genres={props.genres} update={clickedGenre}/>
             <GenreInfoColumn genres={genres}/>
             <GenrePaintings gpPaintings={paintingsFromGenre}/>

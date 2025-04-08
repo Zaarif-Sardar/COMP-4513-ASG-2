@@ -78,14 +78,14 @@ function PaintingFilter(props)
                             <input id='less' type='radio' name='yearOption' value='less' onChange={handleRadio2} className='text-rBlack rounded-md'></input>
 
                                 <label htmlFor='less' className='pr-2 rounded-md'>Less: </label>
-                                <input type='text' onChange={optionChange} className='rounded-md' ></input>
+                                <input type='text' onChange={optionChange} className='rounded-md text-rBlack' ></input>
                             </div>
 
                             <div className='text-2xl col-start-2 col-end-4'>                               
                                 <input id='greater' type='radio' name='yearOption' value='greater' className='text-rBlack' onChange={handleRadio2}></input>
 
                                 <label htmlFor='greater' className='pr-2'>Greater:</label>
-                                <input type='text' onChange={optionChange} className='rounded-md'></input>
+                                <input type='text' onChange={optionChange} className='rounded-md text-rBlack'></input>
                             </div>
                         </div>
                     </div>

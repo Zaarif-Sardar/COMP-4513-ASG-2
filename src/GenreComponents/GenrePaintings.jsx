@@ -4,7 +4,6 @@ import PaintingsList from '../PaintingList.jsx'
 import PaintingOptions from '../PaintingOptions.jsx'
 import ModalInfo from '../ModalInfo.jsx'
 import {Modal} from 'antd'
-//import './App.css'
 
 
 

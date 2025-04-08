@@ -91,14 +91,14 @@ function Paintings(props)
             }
 
     return(
-        <article className='h-dvh'>
+        <article className='size-auto'>
             
             <Header/>
-            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
-                <div className='col-start-1 col-end-3 border-2 border-solid py-2 px-2 rounded-md border-8 border-solid border-cBlue'>
+            <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10 size-auto'>
+                <div className='col-start-1 col-end-3 b py-2 px-2'>
                     <PaintingFilter artists={props.artists} galleries={props.galleries} submitHandler={handleFilter}/>
                 </div>
-                <div className='col-start-3 col-end-6 border-8 border-solid  border-cBlue rounded-md py-2 px-2 h-dv'>
+                <div className='col-start-3 col-end-6  py-2 px-2 h-dv'>
                    <PaintingsDisplayed paintings={filteredPaintings} sM={showModal} update1={ClickedPainting} />
                    <Modal title='Painting Details' open={isModalOpen} onOk={handleOk} onCancel={handleCancel} className=''  width={'80%'}>
                         <ModalInfo clickedPainting={clickedPainting}/>

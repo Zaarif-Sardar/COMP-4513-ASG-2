@@ -3,7 +3,6 @@ import Header from '../Header.jsx'
 import GalleryList from './GalleryList.jsx'
 import GalleryInfo from './GalleryInfo.jsx'
 import GalleryPaintings from './GalleryPaintings.jsx'
-//import './App.css'
 
 
 

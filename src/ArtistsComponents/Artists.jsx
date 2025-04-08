@@ -4,7 +4,6 @@ import Header from '../Header.jsx'
 import ArtistsList from './ArtistsList.jsx'
 import ArtistsInfoColumn from './ArtistInfoColumn.jsx'
 import ArtistPaintings from './ArtistPaintings.jsx'
-//import './App.css'
 
 
 

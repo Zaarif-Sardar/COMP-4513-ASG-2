@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import GenreListItem from './GenreListItem.jsx'
 
-//import './App.css'
 
 
 

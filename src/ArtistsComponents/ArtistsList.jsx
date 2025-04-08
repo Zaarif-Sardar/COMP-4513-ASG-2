@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import ArtistsListItem from './ArtistsListItem.jsx'
 
-//import './App.css'
 
 
 
 function ArtistsList(props) 
 {
-  console.log(props.artists)
     return(
         <div className=' h-dvh leftPart border-solid border-hBlue bg-cBlue rounded-md overflow-scroll'>
             <ul className=' list-none rounded-md'>

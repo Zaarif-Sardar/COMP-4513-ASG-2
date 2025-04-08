@@ -6,7 +6,6 @@ import ModalInfo from '../ModalInfo.jsx'
 import { Modal} from 'antd'
 
 
-//import './App.css'
 
 
 

@@ -3,7 +3,6 @@ import { Routes, Route} from 'react-router-dom'
 import { FavouriteContext } from '../App.jsx'
 
 
-//import './App.css'
 
 
 
@@ -25,7 +24,7 @@ function GalleryCard(props)
         }
     return(
         
-            <div className=' grid grid-cols-3 bg-cBlue  my-5 mx-2 rounded-md py-5 px-5 gap-10 h-min '>
+            <div className=' grid grid-cols-3 bg-cBlue  my-5 mx-2 rounded-md py-5 px-5 gap-10 h-auto '>
                 <div className='col-start-1 col-end-4 text-white bg-cOrange rounded-md border-2 border-hBlue'>
                     <p className='text-7xl border-solid py-2 px-2  '>{props.galleryName}</p>
                     <p className='text-3xl py-1 px-2'>Originally known as  <span className='font-bold'>{props.galleryNativeName}</span></p>

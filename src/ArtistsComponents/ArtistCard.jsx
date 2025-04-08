@@ -3,10 +3,6 @@ import { Routes, Route} from 'react-router-dom'
 import { FavouriteContext } from '../App.jsx'
 
 
-//import './App.css'
-
-
-
 function ArtistCard(props) 
 {
     const {favourites,setFavourites} = useContext(FavouriteContext);
@@ -26,7 +22,7 @@ function ArtistCard(props)
 
     return(
      
-            <div className='grid grid-cols-5 bg-cBlue  my-5 mx-2 rounded-md py-5 px-5 gap-10 h-min '>
+            <div className='grid grid-cols-5 bg-cBlue  my-5 mx-2 rounded-md py-5 px-5 gap-10 h-auto '>
                 <div  className='col-start-1 col-end-6 text-white bg-cOrange rounded-md border-4 border-hBlue font-bold'> 
                     <p className='text-7xl border-solid py-2 px-2'>{props.fName} {props.lName}</p>
                 </div>
@@ -42,14 +38,6 @@ function ArtistCard(props)
                 <button className='bg-jYellow rounded-md text-white text-lg font-bold col-start-3 col-end-4 py-5  border-2 border-hBlue' onClick={addToFave}>Add to Favourites</button>
 
             </div> 
- 
-
-   
-
-     
-   
-       
-            
 
 
     )
