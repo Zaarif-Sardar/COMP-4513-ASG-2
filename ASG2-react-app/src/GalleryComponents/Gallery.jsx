@@ -25,9 +25,9 @@ function Gallery(props)
    
         
     return(
-        <article className='h-dvh '>
+        <article className='h-dvh'>
             <Header artists={props.artists} painting={props.paintings} />
-            <div className='grid grid-cols-5 w-lg gap-4 my-10 mx-10 h-min ' >
+            <div className='grid grid-cols-5 w-lg gap-4 my-10 mx-10  ' >
             <GalleryList  galleries={props.galleries} update={clickedGallery} />
             <GalleryInfo gallery={gallery}/>
             <GalleryPaintings paintings={paintingsForGallery} gallery={gallery} />

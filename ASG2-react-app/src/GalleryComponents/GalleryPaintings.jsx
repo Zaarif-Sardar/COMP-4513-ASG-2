@@ -61,10 +61,10 @@ function GalleryPaintings(props)
             }
     return(
 
-        <div className=' h-2/5 border-4 border-solid border-hBlue rounded-md col-span-2 bg-cBlue h-dvh overflow-scroll text-white'>
+        <div className=' h-dvh border-4 border-solid border-hBlue rounded-md col-span-2 bg-cBlue h-dvh overflow-scroll text-white'>
             <PaintingOptions update={sortBy}/>
            <PaintingsList paintings={props.paintings} sM={showModal} update1={ClickedPainting}/>
-           <Modal title={clickedPainting.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+           <Modal title={clickedPainting.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} width={'80%'} >
                 <ModalInfo clickedPainting={clickedPainting}/>
            </Modal>
         </div>

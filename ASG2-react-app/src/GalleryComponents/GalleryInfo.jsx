@@ -9,7 +9,7 @@ import GalleryCard from './GalleryCard.jsx'
 function GalleryInfo(props) 
 {
     return(
-        <div className=' h-2/5  border-4 border-solid border-hBlue bg-cBlue col-span-2 border-violet-400 rounded-md shadow-md'>
+        <div className=' h-dvh border-4 border-solid border-hBlue bg-cBlue col-span-2 border-violet-400 rounded-md shadow-md'>
            <GalleryCard 
            galleryNativeName={props.gallery.galleryNativeName} 
            galleryName={props.gallery.galleryName} 

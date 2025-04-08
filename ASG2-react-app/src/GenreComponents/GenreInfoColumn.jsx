@@ -10,11 +10,12 @@ function GenreInfoColumn(props)
 
     
     return(
-        <div className='border-4 border-solid col-span-2'>
+        <div className='h-dvh border-4 border-solid border-hBlue bg-cBlue col-span-2 rounded-md shadow-md p-5'>
            <GenreCard 
            name={props.genres.genreName}
            desc={props.genres.description}
            link={props.genres.wikiLink}
+           id={props.genres.genreId}
            />
         </div>
        

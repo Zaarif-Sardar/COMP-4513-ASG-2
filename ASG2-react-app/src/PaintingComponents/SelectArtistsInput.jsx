@@ -14,7 +14,7 @@ function SelectArtistsInput(props)
 
 
     return(
-        <select id='artists' className='border-solid border-2' onChange={props.onChange} >
+        <select id='artists' className='border-solid border-2 text-rBlack rounded-md' onChange={props.onChange} >
             {props.artists?.map(a => <ArtistItemOption
             artists={a}
             key={a.artistId} 
@@ -22,6 +22,7 @@ function SelectArtistsInput(props)
             name={a.firstName + ' ' + a.lastName} 
             onChange={props.onChange}
          />)}
+         
         </select>
         
     )

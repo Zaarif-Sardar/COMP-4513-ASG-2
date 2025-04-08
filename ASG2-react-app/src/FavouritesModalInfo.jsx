@@ -30,30 +30,28 @@ function FavouritesModalInfo(props)
 
 
     return(
-        <div>
-                <div>
-                    <button onClick={clearAll}>Empty Favourites</button>
-                    <button>Remove</button>
+        <div className='bg-cBlue rounded-md '>
+                <div className='flex justify-end w-auto'>
+                    <button className='bg-jYellow rounded-md text-white text-3xl font-bold col-start-2 py-5 px-5  mt-5 mr-5 border-4 border-hBlue' onClick={clearAll}>Empty Favourites</button>
                 </div>
-            <div className='grid grid-cols-4 w-lg gap-10 my-20 mx-10'>
-            
-                <div className=' bg-stone-500'>
-                    <p>Artists</p>
-                    <ul className='bg-neutral-50'>
+            <div className='grid grid-cols-3 w-lg gap-10 my-5 mx-10'>
+                <div className=' bg-hBlue border-2 border-solid border-cBlue rounded-md text-white'>
+                    <p className='text-center text-2xl'>Artists</p>
+                    <ul>
                         {favArtists?.map( f => <FavListItem name={f.name} id={f.id} update={removeSingle}/>  )}
                     </ul>
                 </div>
 
-                <div className=' bg-stone-500'>
-                    <p>Galleries</p>
-                    <ul className='bg-neutral-50'>
+                <div className=' bg-hBlue border-2 border-solid border-cBlue rounded-md text-white'>
+                    <p className='text-center text-2xl'>Galleries</p>
+                    <ul >
                         {favGalleries?.map( f => <FavListItem name={f.name }  id={f.id} update={removeSingle} />  )}
                     </ul>
                 </div>
         
-                <div className='col-start-3 col-end-5 bg-stone-500'>
-                     <p>Paintings</p>
-                    <ul className='bg-neutral-50'>
+                <div className=' bg-hBlue border-2 border-solid border-cBlue rounded-md text-white'>
+                     <p className='text-center text-2xl'>Paintings</p>
+                    <ul >
                         {favPaintings?.map( f => <FavListItem name={f.name}  id={f.id}  update={removeSingle} />  )}
                     </ul>
                 </div>

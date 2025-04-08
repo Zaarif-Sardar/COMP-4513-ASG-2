@@ -33,7 +33,7 @@ function GalleryCard(props)
                 <div className=' p-40 text-white bg-cOrange rounded-md col-start-1 col-end-3 border-2 border-hBlue ' >MAP BOX</div>
                 <div className=' text-white bg-cOrange rounded-md place-self-center col-start-3 col-end-4 border-2 border-hBlue'> 
                     <p className='text-2xl py-1 px-2'> Located in {props.galleryCity}, {props.galleryCountry}</p>
-                    <a className='text-2xl py-1 px-2 hover:text-stone-900' href={props.galleryWebSite} > Visit their Site </a>
+                    <a className='text-2xl py-1 px-2 hover:text-stone-900 text-rBlack font-bold' href={props.galleryWebSite} > Visit their Site </a>
                 </div>
                
                 

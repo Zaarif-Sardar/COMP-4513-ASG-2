@@ -9,8 +9,8 @@ import GenreListItem from './GenreListItem.jsx'
 function GenreList(props) 
 {
     return(
-        <div className='py-4 px-4 border-4 border-solid'>
-            <ul className=' list-none'>
+        <div className=' h-dvh leftPart border-4 border-solid border-hBlue bg-cBlue rounded-md overflow-scroll'>
+            <ul className=' list-none rounded-md'>
               { 
            
               props.genres?.map(g => <GenreListItem 

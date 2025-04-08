@@ -16,9 +16,9 @@ function FavListItem(props)
     }
 
     return(
-        <li className='py-4 px-4 border-2 border-solid hover:bg-stone-500' >
+        <li className='py-4 px-4 border-2 border-solid border-cOrange flex justify-around text-xl items-center rounded-md' >
             {props.name}
-            <button onClick={handleClick}>D</button>
+            <button  className ='text-white text-lg  hover:bg-jYellow rounded-md p-5 ' onClick={handleClick}>Delete</button>
         </li>
 
      

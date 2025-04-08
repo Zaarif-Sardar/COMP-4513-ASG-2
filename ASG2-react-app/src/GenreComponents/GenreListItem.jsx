@@ -13,7 +13,7 @@ function GenreListItem(props)
     }
 
     return(
-        <li className='py-4 px-4 border-2 border-solid hover:bg-stone-500' onClick={handleClick}>{props.name}</li>
+        <li className=' leftLI rounded-md my-4 font-sans text-lg text-white bg-cOrange   hover:bg-gray-100 hover:text-stone-900' onClick={handleClick}>{props.name}</li>
         
     )
 }

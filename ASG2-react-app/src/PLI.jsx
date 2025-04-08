@@ -12,12 +12,15 @@ function PLI(props)
     const handleClick = (e) => {
         props.update1(props.id);
         props.sModal();
+    
     }
+    
+    console.log(props.imgFile)
     return(
         <li onClick={handleClick}  className='py-4 px-4  bg-cOrange hover:bg-jYellow rounded-md my-2 mx-2 border-2 border-hBlue' >
             <div className='flex  content-center   hover:bg-grey-500'> 
                 <div className='my-5 mr-5'>
-                    <img src={props.imgFile}/>
+                    <img src={props.imgFile} className='size-32'/>
                 </div>
                 <div className=' content-center my-5 mx-5 '>
                     <p>{props.name}</p>

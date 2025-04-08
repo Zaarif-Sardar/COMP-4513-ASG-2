@@ -10,7 +10,7 @@ function ArtistsInfoColumn(props)
 
     
     return(
-        <div className='border-4 border-solid col-span-2'>
+        <div className='h-dvh col-span-2 border-4 border-solid border-hBlue bg-cBlue col-span-2 rounded-md shadow-md'>
            <ArtistCard 
            fName={props.artist.firstName}
            lName={props.artist.lastName}
@@ -20,6 +20,8 @@ function ArtistsInfoColumn(props)
            birthDate={props.artist.yearOfBirth}
            artistLink={props.artist.artistLink}
            artist={props.artist}
+           id={props.artist.artistId}
+           
            />
         </div>
        

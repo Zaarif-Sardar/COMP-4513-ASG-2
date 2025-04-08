@@ -10,7 +10,7 @@ function GalleryList(props)
 {
 
     return(
-        <div className='  leftPart border-4 border-solid border-hBlue bg-cBlue rounded-md h-2/5 overflow-scroll '>
+        <div className=' h-dvh leftPart border-4 border-solid border-hBlue bg-cBlue rounded-md  overflow-scroll '>
             <ul className=' list-none rounded-md '>
               { 
            

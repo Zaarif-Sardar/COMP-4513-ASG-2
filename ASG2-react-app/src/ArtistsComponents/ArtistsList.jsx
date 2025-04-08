@@ -10,8 +10,8 @@ function ArtistsList(props)
 {
   console.log(props.artists)
     return(
-        <div className='py-4 px-4 border-4 border-solid'>
-            <ul className=' list-none'>
+        <div className=' h-dvh leftPart border-solid border-hBlue bg-cBlue rounded-md overflow-scroll'>
+            <ul className=' list-none rounded-md'>
               { 
            
               props.artists?.map(a => <ArtistsListItem 
@@ -26,7 +26,10 @@ function ArtistsList(props)
                 deathDate={a.yearOfDeath} 
                 url={a.artistLink}
                 detail={a.details}
-                update={props.update}/>)
+                update={props.update}
+              
+                />)
+
               }
             </ul>
 

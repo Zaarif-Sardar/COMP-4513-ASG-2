@@ -26,7 +26,7 @@ function Artists(props)
    
         
     return(
-        <article>
+        <article className='h-dvh '>
             <Header artists={props.artists}/>
             <div className='grid grid-cols-5 w-lg gap-4 my-20 mx-10'>
             <ArtistsList artists={props.artists} update={clickedArtist}/>

@@ -12,7 +12,7 @@ function PaintingsDisplayed(props)
    
         
     return(
-        <div className=' grid-col-2 border-solid border-2'>
+        <div className=' grid-col-2 border-solid border-cBlue border-4 bg-cBlue rounded-md'>
         
      
                 {props.paintings?.map(p =><PDI

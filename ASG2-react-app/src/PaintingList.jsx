@@ -22,7 +22,7 @@ function PaintingList(props)
             year={p.yearOfWork}
             sModal={props.sM}
             update1={props.update1}
-            imgFile={`https://res.cloudinary.com/funwebdev/image/upload/w_100/art/paintings/square/${p.imageFileName}.jpg`} />)}
+            imgFile={`/paintings/square/${p.imageFileName}.jpg`} />)}
         
         </ul> 
 

@@ -26,21 +26,36 @@ function ModalInfo(props)
         }
     
     return(
-        <div>
-            <div className=''>
-                <img href=""></img>
-            </div>   
-            <div>
+        <div className='grid grid-cols-5 gap-4'>
+            <div className='col-start-1 col-end-3 rounded-md text-white text-2xl font-bold bg-cOrange py-5 px-2 border-4 border-hBlue'>
                 <p>{props.clickedPainting.title}</p>
+            </div>
+
+            <div className='col-start-3 col-end-6 rounded-md text-white text-lg bg-cOrange  py-5  px-2 border-4 border-hBlue'>
+                <p> Made in {props.clickedPainting.yearOfWork}</p>
+            </div>
+
+            <div className='col-start-1 col-end-2 rounded-md text-white text-lg font-bold bg-cOrange py-5  px-2 border-4 border-hBlue'>
                 <p>{props.clickedPainting.artists.firstName} {props.clickedPainting.artists.lastName}</p>
-                <p>{props.clickedPainting.yearOfWork} {props.clickedPainting.width} {props.clickedPainting.height}</p>
-                <p>{props.clickedPainting.artists.artistLink}</p>
-                <p>{props.clickedPainting.galleries.galleryName} located in {props.clickedPainting.galleryCity}</p>
-                <a href={props.clickedPainting.galleries.galleryWebsite}></a>
+                <a  className='text-rBlack'href={props.clickedPainting.artists.artistLink}>Learn more about the Artist here</a>
+            </div>
+
+            <div className='col-start-3 col-end-6 rounded-md text-white text-lg  bg-cOrange py-5  px-2 border-4 border-hBlue'>
+                <p>Located in {props.clickedPainting.galleries.galleryName} in the city of {props.clickedPainting.galleries.galleryCity}</p>
+                <a className='text-rBlack' href={props.clickedPainting.galleries.galleryWebsite}>Check out the Gallery Site</a>
+            </div> 
+
+            <div className='col-start-1 col-end-3 rounded-md text-white text-lg bg-cOrange py-5  px-2 border-4 border-hBlue'>
+                <img  className='size-48' src={`/paintings/square/${props.clickedPainting.imageFileName}.jpg`} ></img>
+                <p>Width: {props.clickedPainting.width}, Height: {props.clickedPainting.height}</p>
+            </div>
+ 
+            <div className='col-start-3 col-end-6 rounded-md text-white text-lg  bg-cOrange py-5  px-2 border-4 border-hBlue'>
                 <p>{props.clickedPainting.description}</p>
                 <p>{props.clickedPainting.copyrightText}</p>
-                <button onClick={addToFave}>Add to favourites</button>
+               
             </div>
+            <button  className='col-start-3 bg-jYellow rounded-md text-white text-2xl font-bold col-start-2 py-5  px-2 border-4 border-hBlue' onClick={addToFave}>Add to favourites</button>
         </div> 
    
     )
